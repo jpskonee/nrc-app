@@ -1,0 +1,25 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-bar {
+  background-color: $main_red;
+  color: white;
+  padding: 0;
+}
+
+.nav-links {
+  margin-right: 10px;
+  padding: 6px 10px;
+  background-color: black;
+  border: 2px white groove;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-links:hover {
+  background-color: white;
+  color: black;
+  border: 2px teal groove;
+}
