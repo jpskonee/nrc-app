@@ -246,12 +246,12 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           </Link>}
 
-           <Link onClick={handleDrawerClose}  to="/gettingstarted">
+           {!activeUser && <Link onClick={handleDrawerClose}  to="/gettingstarted">
            <ListItem button>
                 <ListItemIcon> <EmojiObjectsIcon /> </ListItemIcon>
                 <ListItemText>Getting Started</ListItemText>
             </ListItem>
-          </Link>
+          </Link>}
 
            
            {activeUser && <ListItem onClick={handleLogout} button>
