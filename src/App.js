@@ -14,6 +14,7 @@ import ContactUs from "../src/components/Static-Pages/ContactUs";
 import BookingPage from "../src/components/Bookingpage/BookingPage";
 import { AuthProvider } from "./components/StateManagement/AuthState";
 import PaymentSuccess from "./components/Partials/PaymentSuccess";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -25,6 +26,7 @@ function App() {
          <Navbar />
       <Switch>
          <Route exact path="/" component={HomePage} />
+         <Route exact path="/404" component={HomePage} />
          <Route exact path="/login" component={LoginReg} />
          <Route exact path="/about" component={AboutUs} />
          <Route exact path="/paymentsuccess" component={PaymentSuccess} />
@@ -34,7 +36,7 @@ function App() {
          <Route exact path="/gettingstarted" component={GettingStarted} />
          <Route exact path="/contact" component={ContactUs} />
          <Route exact path="/news" component={NewsPage} />
-         <Route exact path="/booking" component={BookingPage} />
+         <PrivateRoute exact path="/booking" component={BookingPage} />
          
       </Switch>
       </Router>

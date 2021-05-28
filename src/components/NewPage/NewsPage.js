@@ -22,11 +22,12 @@ const NewsPage = () => {
     // }, [])
 
     return (
-        <div>
-            <Container maxWidth="lg">
-                <h1> news</h1>
-                
-            </Container>
+       <div >
+            <Container style={{display: "flex", flexDirection:"column", justifyContent: "center"}} maxWidth="md">
+                <h2  style={{margin: "0 auto"}}>Hot News</h2>
+                <br />
+                <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX6594987.jpg" alt="under-construction"/>
+           </Container>
         </div>
     )
 }

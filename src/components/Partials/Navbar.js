@@ -182,7 +182,7 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader}>
           <Link to="/" style={{ margin: "0px auto", color: "grey", fontFamily: "cursive", fontWeight: "bold", fontSize: "2.8vh" }}>
-            {userInit ?  <p> Welcome {userInit} </p> : <p> What we do!</p>}
+           <p> Welcome {userInit && userInit} </p> 
           </Link>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}

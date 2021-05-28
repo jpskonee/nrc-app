@@ -134,18 +134,6 @@ export default function CustomizedAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-
-      <Accordion square expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
-        <AccordionSummary aria-controls="panel8d-content" id="panel8d-header">
-          <Typography> would i get food/snacks during the trip? </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-                We serve specially prepared Africa delicacies for travellers boarding inter-state trips,
-                and snacks for short trips.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
     </div>
   );
 }
