@@ -85,7 +85,7 @@ const BookingTan = () => {
 
     useEffect(() => {
         generateUserName();
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (

@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     
     useEffect(() => {
         trackUserState();
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
     
 
 
