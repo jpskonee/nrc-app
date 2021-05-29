@@ -54,11 +54,13 @@ const LoginReg = () => {
           trips: [],
           feedbacks: [],
           active: true,
+          test: "test",
+          imgUrl: "",
           userID: userReg.user.uid
         });
         setAlert(true);
         setType("success");
-        setMsg(` ${fname} ${lname}  Saved to DB`);
+        setMsg(`Welcome ${lname} .${fname.slice(0,1).toUpperCase()}.`);
           setTimeout(() => {
         hist.push("/booking");
       }, 2500);
@@ -144,22 +146,22 @@ const LoginReg = () => {
           <h3> REGISTER  </h3>
           <form onSubmit={handleRegister}>
             <div className="firstname">
-              <input autoComplete="off" required placeholder="Firstname" name="firstname" value={fname} onChange={(e) => {
+              <input autoComplete="off" type="text" required placeholder="Firstname" name="firstname" value={fname} onChange={(e) => {
                   setFname(e.target.value)
                 }} /> <br/>
             </div>
                 <div className="lastname">
-                <input autoComplete="off" required placeholder="Lastname" name="lastname" value={lname} onChange={(e) => {
+                <input autoComplete="off" type="text" required placeholder="Lastname" name="lastname" value={lname} onChange={(e) => {
                   setLname(e.target.value)
                 }} /><br/>
                 </div>
                 <div className="phone-number">
-                <input autoComplete="off" required placeholder="Enter Phone Number" name="number" value={phone} onChange={(e) => {
+                <input autoComplete="off" type="number" required placeholder="Enter Phone Number" name="number" value={phone} onChange={(e) => {
                   setPhone(e.target.value)
                 }} /><br/>
                 </div>
                 <div className="email">
-                <input autoComplete="off" required placeholder="Enter a valid email Address" name="email" value={email} onChange={(e) => {
+                <input autoComplete="off" type="email" required placeholder="Enter a valid email Address" name="email" value={email} onChange={(e) => {
                   setEmail(e.target.value)
                 }} /><br/>
                 </div>

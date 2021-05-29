@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -25,13 +25,16 @@ import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import SportsHandballIcon from '@material-ui/icons/SportsHandball';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // import LoginReg from "../LoginReg/LoginReg";
 // import { Alert, AlertTitle } from '@material-ui/lab';
 import { AuthContext } from '../StateManagement/AuthState';
 import { app } from "../../base";
 import { useHistory} from "react-router-dom";
+import UserNavPreview from '../UserData/UserNavPreview';
 
-const drawerWidth = 210;
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,14 +97,14 @@ const useStyles = makeStyles((theme) => ({
 export default function PersistentDrawerLeft() {
   
   const data = useContext(AuthContext);
-  const { activeUser, setActiveUser, userInit } = data;
+  const { activeUser, setActiveUser , open, setOpen } = data;
 
   const hist = useHistory();
 
   const classes = useStyles();
   const theme = useTheme();
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   // const [alert, setAlert] = useState(false);
   // const [type, setType] = useState("");
   // const [msg, setMsg] = useState("");
@@ -114,7 +117,7 @@ export default function PersistentDrawerLeft() {
   const handleDrawerClose = () => {
     setTimeout(() => {
       setOpen(false);
-    }, 500);
+    }, 200);
   };
 
   // const HandleLogin = () => {
@@ -161,13 +164,18 @@ export default function PersistentDrawerLeft() {
           </IconButton>
           <div style={{ width:"100%", display: "flex", justifyContent: "space-between", alignContent: "center"}}>
             <div>  <Link to="/">  <div style={{
-              margin: "auto",
               color: "white",
-              fontSize: "3.5vh",
+              fontSize: "3.0vh",
               fontWeight: "bold",
               fontFamily: "cursive"
             }}>GoRails.com</div> </Link></div>
-            <div> <AccountCircleIcon style={{fontSize: "30px"}} /> </div>
+
+            {activeUser ? <div style={{display: "flex", alignItems: "center" , justifyContent: "space-around"}}>
+              <Link to="/booking"> <ShoppingCartIcon style={{fontSize: "18px", marginRight: "10px", color: "white"}} /> </Link>
+              <Link to="/"> <NotificationsActiveIcon style={{fontSize: "18px", marginRight: "10px", color: "white"}} /> </Link>
+              <Link to="/user"> <AccountCircleIcon style={{ fontSize: "18px",  color: "white"}} /> </Link>
+           </div> : <Link to="/login"> <ShoppingCartIcon style={{fontSize: "18px", marginRight: "10px", color: "white"}} /> </Link>}
+            
           </div>
         </Toolbar>
       </AppBar>
@@ -181,9 +189,7 @@ export default function PersistentDrawerLeft() {
         }}
       >
         <div className={classes.drawerHeader}>
-          <Link to="/" style={{ margin: "0px auto", color: "grey", fontFamily: "cursive", fontWeight: "bold", fontSize: "2.8vh" }}>
-           <p> Welcome {userInit && userInit} </p> 
-          </Link>
+           <UserNavPreview />
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>

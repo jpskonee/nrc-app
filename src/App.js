@@ -4,7 +4,7 @@ import Navbar from "./components/Partials/Navbar";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import HomePage from "./components/Homepage/HomePage";
 import LoginReg from "./components/LoginReg/LoginReg";
-import UserProfile from "./components/UserData/UserProfile";
+import UserProfilePage from "./components/UserData/UserProfilePage";
 import NewsPage from "../src/components/NewPage/NewsPage";
 import AboutUs from "../src/components/Static-Pages/AboutUs";
 import TripGuide from "../src/components/Static-Pages/TripGuide";
@@ -21,7 +21,7 @@ import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
-    <AuthProvider>
+    <AuthProvider >
     <Router>
          <Navbar />
       <Switch>
@@ -29,8 +29,8 @@ function App() {
          <Route exact path="/404" component={HomePage} />
          <Route exact path="/login" component={LoginReg} />
          <Route exact path="/about" component={AboutUs} />
-         <Route exact path="/paymentsuccess" component={PaymentSuccess} />
-         <Route exact path="/user" component={UserProfile} />
+         <PrivateRoute exact path="/paymentsuccess" component={PaymentSuccess} />
+         <PrivateRoute exact path="/user" component={UserProfilePage} />
          <Route exact path="/tripguide" component={TripGuide} />
          <Route exact path="/services" component={Services} />
          <Route exact path="/gettingstarted" component={GettingStarted} />

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BookingTan = () => {
+const BookingForm = () => {
     const classes = useStyles();
     const hist = useHistory();
    
@@ -44,7 +44,7 @@ const BookingTan = () => {
     const createTicket = async (e) => {
         e.preventDefault();
         const ticketDB = await app.firestore().collection("tickets");
-        const savedTicket = await ticketDB.doc(loggedInUser).set({
+        const savedTicket = await ticketDB.doc().set({
           createdBy: loggedInUser,
           createdDate: new Date().toLocaleString(),
           createAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -236,4 +236,4 @@ const BookingTan = () => {
     )
 }
 
-export default BookingTan
+export default BookingForm

@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core'
 import React from 'react'
 import ImageSlider from '../Partials/ImageSlider'
-import BookingTan from './BookingTan'
+import BookingForm from './BookingForm'
 
 const BookingPage = () => {
     return (
@@ -15,7 +15,7 @@ const BookingPage = () => {
             />
             <Container maxWidth="lg">
                 <div style={{ margin: "0 auto", display: "flex", justifyContent: "center", width: "100%"}}>
-                     <BookingTan />
+                     <BookingForm />
                </div>
            </Container>
         </div>

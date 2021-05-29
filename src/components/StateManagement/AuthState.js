@@ -10,6 +10,9 @@ export const AuthProvider = ({ children }) => {
     const [loggedInUser, setLoggedInUser] = useState();
     const [userInit, setUserInit] = useState();
 
+    //navbar toggle
+    const [open, setOpen] = useState(false);
+
  const trackUserState = async () => {
             await app.auth().onAuthStateChanged(user => {
                 if (user) {
@@ -50,6 +53,8 @@ export const AuthProvider = ({ children }) => {
             loggedInUser,
             setLoggedInUser,
             userInit,
+            open,
+            setOpen
         }}>
             {children}
         </AuthContext.Provider>

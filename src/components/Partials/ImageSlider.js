@@ -35,5 +35,3 @@ const ImageSlider = ({image, headerText, color, slogan, topCaption}) => {
 
 export default ImageSlider
 
-
-// style={{display: "flex",justifyContent: "center", alignItems: "center",overflow:"auto"}}
